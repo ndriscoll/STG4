@@ -15,8 +15,14 @@ Introduction
 Of course, you know by now how to start a proof that one set is a subset of another.
 "
 
+TheoremTab "∩∪"
+
+/-- For any sets `A` and `B`, `inter_eq_subset_and A B` is a proof of
+`A ⊆ B ∧ A ⊆ C ↔ A ⊆ B ∩ C`. -/
+TheoremDoc STG4.inter_eq_subset_and as "inter_eq_subset_and" in "∩∪"
+
 /-- Suppose $A \subseteq B$ and $A \subseteq C$.  Then $A \subseteq B \cap C$. -/
-Statement (A B C : Set U) (h1 : A ⊆ B) (h2 : A ⊆ C) : A ⊆ B ∩ C := by
+Statement (A B C : Set U): A ⊆ B ∧ A ⊆ C ↔ A ⊆ B ∩ C := by
   intro x h3
   Hint "Writing out the definition of intersection in the goal will help."
   rewrite [mem_inter_iff]
